@@ -15,36 +15,36 @@ class RLPlotter():
 
     def clear_plots(self, path):
         if not self.test:
-            clear_folder('episode_losses_critic', path)
-            clear_folder('episode_losses_actor', path)
-            clear_folder('episode_losses_sum', path)
-            clear_folder('episode_losses_overlapped', path)
+            #clear_folder('episode_losses_critic', path)
+            #clear_folder('episode_losses_actor', path)
+            #clear_folder('episode_losses_sum', path)
+            #clear_folder('episode_losses_overlapped', path)
             clear_folder('run_losses_overlapped', path)
-            clear_folder('run_losses_sum', path)
-            clear_folder('run_losses_critic', path)
-            clear_folder('run_losses_actor', path)
+            #clear_folder('run_losses_sum', path)
+            #clear_folder('run_losses_critic', path)
+            #clear_folder('run_losses_actor', path)
             clear_folder('episode_mean_rewards', path)
             
-        clear_folder('episode_actions', path)
+        #clear_folder('episode_actions', path)
         clear_folder('episode_paths', path)
-        clear_folder('episode_steps', path)
+        #clear_folder('episode_steps', path)
         clear_folder('episode_actions_polar', path)
 
     def plot_last_episode(self):
         if not self.test:
-            self.plot_last_episode_losses_critic()
-            self.plot_last_episode_losses_actor()
-            self.plot_last_episode_losses_sum()
-            self.plot_last_episode_losses_overlapped()
+            #self.plot_last_episode_losses_critic()
+            #self.plot_last_episode_losses_actor()
+            #self.plot_last_episode_losses_sum()
+            #self.plot_last_episode_losses_overlapped()
             self.plot_last_losses_overlapped()
-            self.plot_last_losses_sum()
-            self.plot_last_losses_critic()
-            self.plot_last_losses_actor()
+            #self.plot_last_losses_sum()
+            #self.plot_last_losses_critic()
+            #self.plot_last_losses_actor()
             self.plot_last_mean_rewards()
 
-        self.plot_last_episode_actions()
+        #self.plot_last_episode_actions()
         self.plot_last_episode_paths()
-        self.plot_last_episode_steps()
+        #self.plot_last_episode_steps()
         self.plot_last_episdode_actions_polar()
 
     def plot_last_mean_rewards(self):
