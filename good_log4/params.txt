@@ -1,0 +1,54 @@
+# ---------------- Training -------------------
+    # Memory
+memory_size = 4096
+memory_batch_size = 512
+    # Duration of training
+runs = 1
+n_episodes = 50
+n_steps = 256
+    # Training parameters
+agent_batch_size = 256
+learning_rate_actor = 0.002
+learning_rate_critic = 0.001
+reduce_lr_every = 2
+milestones = np.arange((memory_batch_size//n_steps)+reduce_lr_every, n_episodes, reduce_lr_every)
+print(milestones)
+learing_rate_decay = 0.8
+
+entropy_coef = 0.002
+entropy_coef_decay = 1
+    # Bellman equation
+future_discount = 0.99
+    # Update Target Model
+target_model_update = 1
+polyak_tau = 0.995
+    # Loss Function
+loss_function = nn.MSELoss()
+
+# ---------------- Environment  ----------------
+    # Environment box size
+env_width = 2
+env_height = 2
+space = Box(env_width, env_height)
+    # Goal box size and center
+
+goal_radius = 0.1
+    # Time step size
+dt = 0.06
+    # Noise
+noise_characteristic_length = 2
+    # Maximum of potential
+c0 = 0.5
+
+# ---------------- Agent ----------------------
+state_dim = 4
+hidden_dims = [64,64]
+act_dim = 1
+act_positive = True
+act_scaling = 2*np.pi
+
+# ---------------- Other ----------------------
+plt.rcParams.update({'font.size': 13})
+plt.rcParams.update({'figure.dpi': 150})
+total_time = []
+update_state_time = []
